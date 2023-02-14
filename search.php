@@ -1,37 +1,19 @@
-public function searchPinterest($q)
-{
-    $url = "https://pinterest.com/search/pins/?q=$q";
+<?php require "static/header.php";
 
-    $pinterestPage = file_get_contents($url);
+  $q = $_GET['q'];
 
-    $domDoc = new \DOMDocument();
-    libxml_use_internal_errors(true);
-    $domDoc->loadHTML($html);
-    libxml_use_internal_errors(false);
+  $url = "https://pinterest.com/search/pins/?q=$q";
+  $pinterestPage = file_get_contents($url);
 
-    $items = $domDoc->getElementsByTagName('script');
-    $data = array();
+  $doc = new DOMDocument();
+  @$doc->loadHTML($html);
 
-    foreach ($items as $item) {
-        $data[] = [
-            'src' => $item->getAttribute('src'),
-            'outerHTML' => $domDoc->saveHTML($item),
-            'innerHTML' => $domDoc->saveHTML($item->firstChild),
-        ];
-    }
+  $items = $doc->getElementsByTagName('img');
 
-    foreach ($data as $key => $value) {
-        $response = json_decode($value['innerHTML']);
-        if (!$response) {
-            continue;
-        }
-        if (isset($response->tree->data->results)) {
-            foreach ($response->tree->data->results as $obj) {
-                print_r($obj->like_count);
-                $images = (Array) $obj->images;
-                print_r($images['736x']->url);
+  foreach ($items as $item) {
+      echo "<img src='", $item, "'>";
+  }
 
-            }
-        }
-    }
-}
+//  echo $pinterestPage;
+
+?>
