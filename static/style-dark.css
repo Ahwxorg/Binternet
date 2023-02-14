@@ -1,0 +1,35 @@
+body {
+  background-color: #2a2b2b;
+  color: white;
+  font-family:verdana, arial, sans-serif;
+}
+
+span {
+  color: #f218ee;
+}
+
+#bodyHeader {
+  text-align: center;
+}
+
+.bodyText {
+  text-align: center;
+
+}
+
+.container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+  color: white;
+  background-color: #1f2120;
+}
+
