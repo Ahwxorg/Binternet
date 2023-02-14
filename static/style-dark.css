@@ -1,7 +1,12 @@
+::root {
+  --inputColor: black;
+}
+
 body {
   background-color: #2a2b2b;
   color: white;
-  font-family:verdana, arial, sans-serif;
+  font-family: verdana, arial, sans-serif;
+  overflow-x: hidden;
 }
 
 span {
@@ -9,12 +14,12 @@ span {
 }
 
 #bodyHeader {
+  margin-top: 10vh;
   text-align: center;
 }
 
 .bodyText {
   text-align: center;
-
 }
 
 .container {
@@ -31,5 +36,46 @@ footer {
   height: 10vh;
   color: white;
   background-color: #1f2120;
+  position: fixed; 
+  bottom: 0;
+}
+
+#footerText {
+  margin: 10px;
+  padding: 10px;
+}
+
+.sep:before {
+  content: "\f004    ";
+}
+
+a {
+  text-decoration: none;
+  color: #12e8b9;
+}
+
+#inputWrapper {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+input, button {
+  outline: none;
+  color: white;
+  background-color: #1f2120;
+  border: 1px solid #1f2120;
+  height: 4vh;
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+  color: white;
+  background-color: #1f2120;
+  border: 1px solid #1f2120;
+  width: 35vw;
+  height: 4vh;
+  margin: 10px;
 }
 
