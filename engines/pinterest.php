@@ -4,7 +4,8 @@
 
     function get_image_results($query) 
     {
-        $url = "https://www.pinterest.com/search/pins/?q=$query";
+ //       $url = "https://www.pinterest.com/search/pins/?q=$query";
+        $url = "https://lite.qwant.com/?q=$query&t=images";
         $response = request($url);
         $xpath = get_xpath($response);
 
