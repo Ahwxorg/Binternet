@@ -194,10 +194,10 @@
 
     function request($url)
     {
-        global $config;
-
         $ch = curl_init($url);
-        curl_setopt_array($ch, $config->curl_settings);
+//      curl_setopt_array($ch, $config->curl_settings);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
 
         return $response;
@@ -241,4 +241,4 @@
     }
 ?>
 
-//basically stolen from LibreX - https://github.com/hnhx/LibreX
+//basically completely stolen from LibreX - https://github.com/hnhx/LibreX

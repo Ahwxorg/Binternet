@@ -1,21 +1,15 @@
 <?php
 
-    $config = require "config.php";
-    require "misc/tools.php";
+require "misc/tools.php";
 
-    $url = $_REQUEST["url"];
-    $requested_root_domain = get_root_domain($url);
+$url = $_REQUEST["url"];
+$allowed_domains = array("pinimg.com", "i.pinimg.com", "pinterest.com");
 
-    $allowed_domains = array("pinimg.com", "i.pinimg.com", "pinterest.com");
-
-    if (in_array($requested_root_domain, $allowed_domains))
-    {
-      $image = $url;
-      $image_src = request($image);
-
-      header("Content-Type: image/jpeg");
-      echo $image_src;
-    }
+if (in_array(get_root_domain($url), $allowed_domains))
+{
+  header("Content-Type: image/jpeg");
+  echo request($url);
+}
 ?>
 
-// basically stolen from LibreX - https://github.com/hnhx/LibreX
+// somewhat stolen from github.com/hnhx/librex
