@@ -79,3 +79,11 @@ input {
   margin: 10px;
 }
 
+img {
+  max-width: 25vw;
+  max-height: 25vw;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+}

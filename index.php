@@ -1,4 +1,5 @@
-<?php require "static/header.php"; ?>
+<?php require "misc/header.php"; ?>
+<title>Pinternet</title>
 </head>
 <body>
     <div class="mainContainer">
@@ -10,4 +11,4 @@
           </div>
         </form>
     </div>
-<?php require "static/footer.php"; ?>
+<?php require "misc/footer.php"; ?>
