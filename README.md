@@ -5,7 +5,7 @@
 
 <h2 align="center">Showcase:</h2>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ahwxorg/pinternet/main/misc/pinternet-1.png/" width="350">
+  <img src="https://raw.githubusercontent.com/Ahwxorg/pinternet/main/misc/pinternet-1.png" width="350">
   <img src="https://raw.githubusercontent.com/Ahwxorg/pinternet/main/misc/pinternet-2.png" width="350">
 </p>
 
