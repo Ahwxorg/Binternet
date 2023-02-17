@@ -27,6 +27,35 @@
 <br>
 
 
+<h2 align="center">Install</h2>
+
+Just clone it somewhere, make a reverse proxy rule and you're set. Example:
+
+```sh
+doas apt install php php-curl nginx nginx-common git
+git clone https://git.ahwx.org/pinternet /var/www/html/pinternet
+cd /var/www/html/pinternet
+```
+
+Example NGINX configuration:
+
+```sh
+server {
+        listen 80;
+        server_name pinternet.ahwx.org;
+
+        root /var/www/html/pinternet;
+        index index.php;
+
+        location ~ \.php$ {
+          include snippets/fastcgi-php.conf;
+          fastcgi_pass unix:/run/php/php-fpm.sock;
+        }
+}
+```
+
+
+
 <h3 align="center">Credits:</h3>
 
 * [LibreX](https://github.com/hnhx/librex) | [https://femboy.hu](https://femboy.hu) - image proxy & quite a bit of other code.
