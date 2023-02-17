@@ -7,9 +7,8 @@ $allowed_domains = array("pinimg.com", "i.pinimg.com", "pinterest.com");
 
 if (in_array(get_root_domain($url), $allowed_domains))
 {
-  header("Content-Type: image/jpeg");
+  header("Content-type: image/jpeg");
   echo request($url);
 }
-?>
 
-// somewhat stolen from github.com/hnhx/librex
+?>

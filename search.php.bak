@@ -26,13 +26,11 @@
 
 <?php
 
-$query = $_GET['q'];
+$base = "https://pinterest.com/resource/BaseSearchResource/get/?data=%7B%22options%22%3A%7B%22query%22%3A%22{}%22%7D%7D";
 
-$baseurl = "https://pinterest.com/resource/BaseSearchResource/get/?data=%7B%22options%22%3A%7B%22query%22%3A%22{}%22%7D%7D";
-
-$search = function($query) use($baseurl)
+$search = function($query) use($base)
 {
-    $url = str_replace("{}", str_replace(" ", "%20", $query), $baseurl);
+    $url = str_replace("{}", str_replace(" ", "%20", $query), $base);
     $json = file_get_contents($url);
     $data = json_decode($json);
     $images = array();
@@ -41,16 +39,15 @@ $search = function($query) use($baseurl)
         $image = $result->{"images"}->{"orig"};
         $url = $image->{"url"};
         array_push($images, $url);
-        echo "<img src='/image_proxy.php?url=", $url, "'>";
     }
     return $images;
 };
 
-$images = $search("$query");
-echo "<br><br>";
-echo "<hr>";
-print(count($images)." images found");
+$images = $search($_REQUEST["q"]);
+echo json_encode($images);
 
-include "misc/footer.php";
+foreach ($img as $imgs) {
+  echo "<img src=",$img,">";
+}
 
 ?>
