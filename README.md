@@ -23,7 +23,7 @@
 
 | Clearnet | TOR | Country |
 |-|-|-|
-| [search.ahwx.org](https://search.ahwx.org/) | no | 🇳🇱 NL (Official Instance) |
+| [pinternet.ahwx.org](https://pinternet.ahwx.org/) | no | 🇳🇱 NL (Official Instance) |
 <br>
 
 
