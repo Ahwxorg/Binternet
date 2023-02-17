@@ -47,9 +47,7 @@ $search = function($query) use($baseurl)
 };
 
 $images = $search("$query");
-echo "<br><br>";
-echo "<hr>";
-print(count($images)." images found");
+echo "<br><br><br><br>";
 
 include "misc/footer.php";
 
