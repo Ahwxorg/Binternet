@@ -41,7 +41,8 @@ $search = function($query) use($baseurl)
         $image = $result->{"images"}->{"orig"};
         $url = $image->{"url"};
         array_push($images, $url);
-        echo "<img src='/image_proxy.php?url=", $url, "'>";
+        echo "<a href='/image_proxy.php?url=", $url, "'>";
+        echo "<img src='/image_proxy.php?url=", $url, "'></a>";
     }
     return $images;
 };
