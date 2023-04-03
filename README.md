@@ -21,9 +21,10 @@
 
 > Make a PR to get added. CloudFlare is not allowed.
 
-| Clearnet | TOR | Country |
-|-|-|-|
-| [pinternet.ahwx.org](https://pinternet.ahwx.org/) | no | 🇳🇱 NL (Official Instance) |
+| Clearnet | TOR | I2P | Country |
+|-|-|-|-|
+| [pinternet.ahwx.org](https://pinternet.ahwx.org/) | no | no | 🇳🇱 NL (Official Instance) |
+| [pinternet.revvy.de](https://pinternet.revvy.de/) | [yes!](http://pinternet.revvybrr6pvbx4n3j4475h4ghw4elqr4t5xo2vtd3gfpu2nrsnhh57id.onion/) | [yes!](http://revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p/) | 🇨🇦 CA |
 <br>
 
 
