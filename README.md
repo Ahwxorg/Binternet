@@ -4,7 +4,10 @@
 
 <h3 align="center">Mirrors</h3>
 
-* Official, [Codeberg](https://codeberg.org/ahwx/pinternet)
+<div align="center">
+ 
+[GitHub](https://github.com/Ahwxorg/pinternet) | [Codeberg](https://codeberg.org/ahwx/pinternet)
+ </div>
 
 
 <h2 align="center">Showcase:</h2>
