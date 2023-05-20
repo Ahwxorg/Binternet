@@ -7,7 +7,7 @@
 </head>
     <body>
         <form class="searchContainer" method="get" autocomplete="off">
-            <h1><a class="no-decoration" href="./"><span>P</span>inter<span>n</span>et</a></h1>
+            <h1><a class="no-decoration" href="./"><span>B</span>inter<span>n</span>et</a></h1>
             <input type="text" name="q"
                 <?php
                     $query_encoded = urlencode($query);
