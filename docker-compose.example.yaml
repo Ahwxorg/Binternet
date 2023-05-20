@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  pinternet:
+    ports:
+     - '8015:8009'
+  container_name: pinternet
+  image: 'pinternet:latest'
