@@ -1,5 +1,5 @@
 echo Version?
 read -r VERSION
-docker build -t pinternet:$VERSION . && docker tag pinternet:$VERSION ahwx/pinternet:$VERSION && docker push ahwx/pinternet:$VERSION
+docker build -t binternet:$VERSION . && docker tag binternet:$VERSION ahwx/binternet:$VERSION && docker push ahwx/binternet:$VERSION
 
-docker build -t pinternet:latest . && docker tag pinternet:latest ahwx/pinternet:latest && docker push ahwx/pinternet:latest
+docker build -t binternet:latest . && docker tag binternet:latest ahwx/binternet:latest && docker push ahwx/binternet:latest
