@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  binternet:
+    ports:
+     - '8015:8009'
+  container_name: binternet
+  image: 'ahwx/binternet:latest'
