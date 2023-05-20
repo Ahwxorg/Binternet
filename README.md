@@ -36,6 +36,11 @@
 <br>
 
 
+<h2 align="center">Legal notice</h2>
+
+Pinternet doesn't host any content. All content on Pinternet is from Pinterest™. Any issues with content should be reported to Pinterest™. Pinternet is free and open source, for more details, check the LICENSE file.
+
+
 <h2 align="center">Install</h2>
 
 This section has moved to [the wiki](https://github.com/Ahwxorg/pinternet/wiki/Installing).
