@@ -9,6 +9,7 @@
       <a href="https://ahwx.org/donate.php" target="_blank">Donate</a>
       |
       <a href="https://github.com/Ahwxorg/pinternet#legal-notice" target="_blank">Legal notice</a>
+      |
 
 <?php
 if (isset($images)) {
