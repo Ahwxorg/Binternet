@@ -1,5 +1,5 @@
 <?php require "misc/header.php"; ?>
-<title>Pinternet</title>
+<title>Binternet</title>
 </head>
 <body>
     <div class="mainContainer">

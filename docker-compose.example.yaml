@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  pinternet:
+  binternet:
     ports:
      - '8015:8009'
-  container_name: pinternet
-  image: 'pinternet:latest'
+  container_name: binternet
+  image: 'ahwx/binternet:latest'
