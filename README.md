@@ -26,7 +26,7 @@
 
 <h2 align="center">Instances:</h2>
 
-> Make a PR to get added. CloudFlare is not allowed.
+> Make a PR to get added. Cloudflare™ is *not* allowed.
 
 | Clearnet | TOR | I2P | Country |
 |-|-|-|-|
@@ -38,7 +38,9 @@
 
 <h2 align="center">Legal notice</h2>
 
-Pinternet doesn't host any content. All content on Pinternet is from Pinterest™. Any issues with content should be reported to Pinterest™. Pinternet is free and open source, for more details, check the LICENSE file.
+Pinternet doesn't host any content. All content shown on any Pinternet instances is from Pinterest™. Pinterest is a registered trademark of Pinterest Inc. Pinternet is not affiliated with Pinterest Inc. Any issues with content shown on any Pinternet instances need to be reported to Pinterest, not the instance host's internet provider or domain provider.
+
+Cloudflare is a registered trademark of Cloudflare, Inc. Pinternet is not affiliated with Cloudflare, Inc.
 
 
 <h2 align="center">Install</h2>
