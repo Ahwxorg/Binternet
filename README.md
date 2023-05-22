@@ -34,6 +34,7 @@
 | [binternet.revvy.de](https://binternet.revvy.de/) | [yes!](http://binternet.revvybrr6pvbx4n3j4475h4ghw4elqr4t5xo2vtd3gfpu2nrsnhh57id.onion/) | [yes!](http://revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p/) | 🇨🇦 CA |
 | [binternet.bloatcat.tk](https://binternet.bloatcat.tk/) | no | no | 🇮🇸 IS |
 | [bn.vern.cc](https://bn.vern.cc) | [yes!](http://bn.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | [yes!](http://verne3vnw4i3qffozcjygtnv4uedwedtevxe7aoht7fngduuwcpa.b32.i2p/) | 🇺🇸 US |
+| [binternet.esmailelbob.xyz](https://binternet.esmailelbob.xyz/) | [yes!](http://binternet.esmail5pdn24shtvieloeedh7ehz3nrwcdivnfhfcedl7gf4kwddhkqd.onion) | no | 🇨🇦 CA |
 
 <br>
 
