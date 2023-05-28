@@ -6,7 +6,7 @@
 
 <div align="center">
  
-[GitHub](https://github.com/Ahwxorg/Binternet) | [Codeberg](https://codeberg.org/ahwx/binternet)
+[GitHub](https://github.com/Ahwxorg/Binternet) | [Codeberg](https://codeberg.org/ahwx/binternet) | [Gitea](https://git.ahwx.org/Ahwx/Binternet)
  </div>
 
 
