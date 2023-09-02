@@ -4,4 +4,4 @@ services:
     ports:
      - '8015:8009'
   container_name: binternet
-  image: 'ahwx/binternet:latest'
+  image: 'ghcr.io/ahwxorg/binternet:latest'
