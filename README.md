@@ -6,7 +6,10 @@
 
 <div align="center">
  
-[GitHub](https://github.com/Ahwxorg/Binternet) | [Codeberg](https://codeberg.org/ahwx/binternet) | [Gitea](https://git.ahwx.org/Ahwx/Binternet)
+[GitHub](https://github.com/Ahwxorg/Binternet)
+
+> Because of PRs/issues, I will use GitHub for now. If you don't like GitHub, you can use one of the [GotHub](https://codeberg.org/gothub/gothub) instances.
+
  </div>
 
 
