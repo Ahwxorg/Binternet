@@ -3,12 +3,17 @@
 require "misc/tools.php";
 
 $url = $_REQUEST["url"];
+$requested_root_domain = get_root_domain($url);
+
 $allowed_domains = array("pinimg.com", "i.pinimg.com", "pinterest.com");
 
-if (in_array(get_root_domain($url), $allowed_domains))
+if (in_array($requested_root_domain, $allowed_domains))
 {
-  header("Content-type: image/jpeg");
-  echo request($url);
+  $image = $url;
+  $image_src = request($image);
+
+  header("Content-Type: image/png");
+  echo $image_src;
 }
 
 ?>
