@@ -58,6 +58,5 @@ This section has moved to [the wiki](https://github.com/Ahwxorg/Binternet/wiki/I
 
 <h3 align="center">Credits:</h3>
 
-* [LibreX](https://github.com/hnhx/librex) - image proxy & quite a bit of other code.
-
-
+* [LibreX](https://github.com/hnhx/librex) - a bit of misc code.
+* [LibreY](https://github.com/Ahwxorg/LibreY) - image proxy
