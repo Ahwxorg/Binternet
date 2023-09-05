@@ -39,6 +39,7 @@
 | [bn.vern.cc](https://bn.vern.cc) | [yes!](http://bn.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | [yes!](http://verne3vnw4i3qffozcjygtnv4uedwedtevxe7aoht7fngduuwcpa.b32.i2p/) | 🇺🇸 US |
 | [pinterest.foxhaven.cyou](https://pinterest.foxhaven.cyou) | no | no | 🇵🇱 PL |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
+| tor-only | [yes!](http://binternet.skunky7dhv7nohsoalpwe3sxfz3fbkad7r3wk632riye25vqm3meqead.onion/) | no | 🇷🇺﻿﻿ RU |
 
 <br>
 
