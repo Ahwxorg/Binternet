@@ -20,8 +20,7 @@
 
                     echo "value=\"$query\"";
                 ?>
-            <br>
-       <hr>
+            >
 </form>
 
 <?php
