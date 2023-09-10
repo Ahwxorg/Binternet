@@ -1,12 +1,38 @@
-::root {
+:root {
   --inputColor: black;
+  --accent-color:#12e8b9;
+  --fg-color: white;
 }
 
 body {
   background-color: #2a2b2b;
-  color: white;
+  color: var(--fg-color);
   font-family: verdana, arial, sans-serif;
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+
+
+
+
+input:focus {
+  border: 1px solid rgb(97, 97, 97);
+}
+
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.hide{
+  display: none;
 }
 
 span {
@@ -14,8 +40,18 @@ span {
 }
 
 #bodyHeader {
-  margin-top: 10vh;
-  text-align: center;
+  margin: 0;
+}
+
+.mainContainer p {
+  margin-bottom:30px;
+  margin-top: 5px;
+
+}
+
+.mainContainer h1 {
+  font-size: 50px;
+
 }
 
 .bodyText {
@@ -29,15 +65,20 @@ span {
 }
 
 footer {
-  text-align: center;
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100vw;
-  height: 10vh;
+  padding: 10px;
   color: white;
   background-color: #1f2120;
-  position: fixed; 
+  position: fixed;
   bottom: 0;
+}
+
+footer a{
+  margin-right: 30px;
 }
 
 #footerText {
@@ -51,33 +92,50 @@ footer {
 
 a {
   text-decoration: none;
-  color: #12e8b9;
+  color: var(--fg-color);
+}
+
+footer a:hover{
+  color: var(--accent-color);
 }
 
 #inputWrapper {
+  display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
 }
 
-input, button {
-  outline: none;
-  color: white;
-  background-color: #1f2120;
-  border: 1px solid #1f2120;
-  height: 4vh;
-  border-radius: 10px;
-}
 
 input {
+  width: 500px;
   outline: none;
   color: white;
   background-color: #1f2120;
   border: 1px solid #1f2120;
-  width: 35vw;
-  height: 4vh;
-  margin: 10px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 15px;
+  font-size: inherit;
+
 }
+
+button {
+  padding: 15px;
+  background: #1f2120;
+  border: 1px solid #1f2120;
+  color: black;
+  background-color: var(--accent-color);
+  border: 0;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* button:hover{
+  background-color: var(--accent-color);
+  color:white;
+} */
 
 img {
   max-width: 25vw;
@@ -86,4 +144,27 @@ img {
   width: auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px black;
+}
+
+
+@media only screen and (max-width: 750px) {
+
+  body{
+    font-size: 14px;
+  }
+
+  .mainContainer h1 {
+    font-size: 35px;
+  
+  }
+
+  input{
+    width: 100%;
+  }
+
+  .centered {
+    width: 95%;
+}
+
+
 }
