@@ -15,8 +15,8 @@
 
 <h2 align="center">Showcase:</h2>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ahwxorg/binternet/main/misc/binternet-1.png" width="350">
-  <img src="https://raw.githubusercontent.com/Ahwxorg/binternet/main/misc/binternet-2.png" width="350">
+  <img src="https://raw.githubusercontent.com/Ahwxorg/binternet/main/static/img/binternet-1.png" width="350">
+  <img src="https://raw.githubusercontent.com/Ahwxorg/binternet/main/static/img/binternet-2.png" width="350">
 </p>
 
 
