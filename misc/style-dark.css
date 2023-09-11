@@ -1,11 +1,14 @@
 :root {
-  --inputColor: black;
   --accent-color:#12e8b9;
   --fg-color: white;
+  --border-color: rgb(97, 97, 97);
+  --main: #2a2b2b;
+  --main-second: #1f2120;
+  
 }
 
 body {
-  background-color: #2a2b2b;
+  background-color: var(--main);
   color: var(--fg-color);
   font-family: verdana, arial, sans-serif;
   overflow-x: hidden;
@@ -14,14 +17,13 @@ body {
   font-size: 16px;
 }
 
-
-
-
-
 input:focus {
-  border: 1px solid rgb(97, 97, 97);
+  border: 1px solid var(--border-color);
 }
 
+.accent{
+  color: var(--accent-color);
+}
 
 .centered {
   position: absolute;
@@ -33,10 +35,6 @@ input:focus {
 
 .hide{
   display: none;
-}
-
-span {
-  color: #f218ee;
 }
 
 #bodyHeader {
@@ -71,8 +69,7 @@ footer {
   justify-content: center;
   width: 100vw;
   padding: 10px;
-  color: white;
-  background-color: #1f2120;
+  background-color: var(--main-second);
   position: fixed;
   bottom: 0;
 }
@@ -111,8 +108,8 @@ input {
   width: 500px;
   outline: none;
   color: white;
-  background-color: #1f2120;
-  border: 1px solid #1f2120;
+  background-color: var(--main-second);
+  border: 1px solid var(--main-second);
   border-radius: 10px 0px 0px 10px;
   padding: 15px;
   font-size: inherit;
@@ -121,9 +118,7 @@ input {
 
 button {
   padding: 15px;
-  background: #1f2120;
-  border: 1px solid #1f2120;
-  color: black;
+  color: var(--main-second);
   background-color: var(--accent-color);
   border: 0;
   border-radius: 0px 10px 10px 0px;
@@ -132,19 +127,103 @@ button {
   font-weight: bold;
 }
 
-/* button:hover{
-  background-color: var(--accent-color);
-  color:white;
-} */
+/* search css start */
 
-img {
-  max-width: 25vw;
-  max-height: 25vw;
-  height: auto;
-  width: auto;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
+.search-container{
+  display: flex;
+  align-items: center;
+  margin: 20px 20px 40px 20px;
 }
+
+.search-container h1{
+  margin: 0;
+}
+
+.search-container input{
+  border-radius: 10px;
+  margin-left: 100px;
+}
+
+.img-result img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.img-result {
+  flex-grow: 1;
+  height: 12rem;
+}
+
+/* search css end */
+
+
+
+/* donate css start */
+
+.donate-container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+.flexbox-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.inner-wrap {
+  width: 500px;
+  padding: 20px;
+}
+
+.qr-box {
+  background-color: var(--main-second);
+  border: 1px solid var(--border-color);
+  border-radius: 10px 0px 0px 10px;
+  width: 100%;
+
+  display: flex;
+  word-wrap: break-word;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row {
+  width: 700px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 25px 0;
+}
+
+hr.small-line {
+  border: 2px solid var(--fg-color);
+  height: 0px;
+  width: 100px;
+  margin: 30px;
+  border-radius: 2px;
+}
+
+/* donate css end */
+
 
 
 @media only screen and (max-width: 750px) {
@@ -164,7 +243,66 @@ img {
 
   .centered {
     width: 95%;
-}
+  }
 
+  .search-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container input {
+    width: 95%;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+
+  /* dontate css start*/
+
+  .donate-container {
+    margin-bottom: 100px;
+    width: 95%;
+    text-align: center;
+  }
+
+  .qr-box {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word;
+    height: auto;
+  }
+
+  .qr-box {
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inner-wrap {
+    width: 80%;
+    text-align: center;
+  }
+
+  .qr-box img {
+    width: 40%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    gap: 5px;
+    width: 0;
+  }
+
+  .flex-row a img {
+    width: 220px;
+    height: auto;
+  }
+  /* donate css end */
 
 }
