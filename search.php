@@ -6,9 +6,9 @@
 ?> - Binternet</title>
 </head>
     <body>
-        <form class="searchContainer" method="get" autocomplete="off">
-            <h1><a class="no-decoration" href="./"><span>B</span>inter<span>n</span>et</a></h1>
-            <input type="text" name="q"
+        <form class="search-container" method="get" autocomplete="off">
+            <h1><a class="no-decoration accent" href="./">Binternet</a></h1>
+            <input type="text" name="q" placeholder="Search Image"
                 <?php
                     $query_encoded = urlencode($query);
 
@@ -21,7 +21,8 @@
                     echo "value=\"$query\"";
                 ?>
             >
-</form>
+            <!-- <div></div> -->
+        </form>
 
 <?php
 
@@ -35,19 +36,20 @@ $search = function($query) use($baseurl)
     $json = file_get_contents($url);
     $data = json_decode($json);
     $images = array();
-    foreach ($data->{"resource_response"}->{"data"}->{"results"} as $result)
-    {
-        $image = $result->{"images"}->{"orig"};
-        $url = $image->{"url"};
-        array_push($images, $url);
-        echo "<a href='/image_proxy.php?url=", $url, "'>";
-        echo "<img src='/image_proxy.php?url=", $url, "'></a>";
-    }
-    return $images;
+    echo "<div class=img-container>";
+        foreach ($data->{"resource_response"}->{"data"}->{"results"} as $result)
+        {
+            $image = $result->{"images"}->{"orig"};
+            $url = $image->{"url"};
+            array_push($images, $url);
+            echo "<a class=img-result href='/image_proxy.php?url=", $url, "'>";
+            echo "<img src='/image_proxy.php?url=", $url, "'></a>";
+        }
+        return $images;
+    echo "</div>";
 };
 
 $images = $search("$query");
-echo "<br><br><br><br>";
 
 include "misc/footer.php";
 
