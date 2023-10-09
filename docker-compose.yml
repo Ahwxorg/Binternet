@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  binternet:
+    container_name: binternet
+    image: ghcr.io/ahwxorg/binternet:latest
+    ports:
+     - '8080:80'
