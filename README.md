@@ -35,11 +35,9 @@
 |-|-|-|-|
 | [binternet.ahwx.org](https://binternet.ahwx.org/) | no | no | 🇳🇱 NL (Official Instance) |
 | [binternet.revvy.de](https://binternet.revvy.de/) | [yes!](http://binternet.revvybrr6pvbx4n3j4475h4ghw4elqr4t5xo2vtd3gfpu2nrsnhh57id.onion/) | [yes!](http://revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p/) | 🇨🇦 CA |
+| no clearnet address | [yes!](http://binternet.skunky7dhv7nohsoalpwe3sxfz3fbkad7r3wk632riye25vqm3meqead.onion/) | [yes!](http://5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p/) | 🇷🇺﻿﻿ RU |
 | [binternet.bloatcat.tk](https://binternet.bloatcat.tk/) | no | no | 🇮🇸 IS |
-| [bn.vern.cc](https://bn.vern.cc) | [yes!](http://bn.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/) | [yes!](http://verne3vnw4i3qffozcjygtnv4uedwedtevxe7aoht7fngduuwcpa.b32.i2p/) | 🇺🇸 US |
-| [pinterest.foxhaven.cyou](https://pinterest.foxhaven.cyou) | no | no | 🇵🇱 PL |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
-| no clearnet addres | [yes!](http://binternet.skunky7dhv7nohsoalpwe3sxfz3fbkad7r3wk632riye25vqm3meqead.onion/) | [yes!](http://5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p/) | 🇷🇺﻿﻿ RU |
 
 <br>
 
