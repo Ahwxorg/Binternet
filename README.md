@@ -38,6 +38,7 @@
 | no clearnet address | [yes!](http://binternet.skunky7dhv7nohsoalpwe3sxfz3fbkad7r3wk632riye25vqm3meqead.onion/) | [yes!](http://5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p/) | 🇷🇺﻿﻿ RU |
 | [binternet.bloatcat.tk](https://binternet.bloatcat.tk/) | no | no | 🇮🇸 IS |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
+| [binternet.privacyfucking.rocks](https://binternet.privacyfucking.rocks/) | no | no | 🇩🇪 DE |
 
 <br>
 
