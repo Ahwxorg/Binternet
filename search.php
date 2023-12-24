@@ -119,7 +119,7 @@ $search = function($query, $bookmark) use($prepare_search_curl_obj)
             $url = $image->{"url"};
             array_push($images, $url);
             echo "<a class=img-result href='/image_proxy.php?url=", $url, "'>";
-            echo "<img src='/image_proxy.php?url=", $url, "'></a>";
+            echo "<img loading='lazy' src='/image_proxy.php?url=", $url, "'></a>";
         }
     echo "</div>";
     $result = new SearchResult();
