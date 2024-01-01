@@ -39,7 +39,7 @@
 | [bn.bloat.cat](https://bn.bloat.cat/) | no | no | 🇷🇴 RO |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
 | [binternet.privacyfucking.rocks](https://binternet.privacyfucking.rocks/) | no | no | 🇩🇪 DE |
-
+| [binternet.ducks.party](https://binternet.ducks.party) | no | no | 🇳🇱 NL |
 <br>
 
 
