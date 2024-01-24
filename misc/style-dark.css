@@ -148,23 +148,19 @@ button {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius:  0.2rem;
 }
 
 .img-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  grid-gap: 10px;
-  margin-bottom: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
-
+  column-count: auto;
+  column-width: 14rem;
+  column-gap: 0.5rem;
+  padding: 1rem;
 }
 
 .img-result {
-  flex-grow: 1;
-  height: 12rem;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 /* search css end */
