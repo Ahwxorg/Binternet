@@ -34,11 +34,9 @@
 | Clearnet | TOR | I2P | Country |
 |-|-|-|-|
 | [binternet.ahwx.org](https://binternet.ahwx.org/) | no | no | 🇳🇱 NL (Official Instance) |
-| [binternet.revvy.de](https://binternet.revvy.de/) | [yes!](http://binternet.revvybrr6pvbx4n3j4475h4ghw4elqr4t5xo2vtd3gfpu2nrsnhh57id.onion/) | [yes!](http://revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p/) | 🇨🇦 CA |
 | no clearnet address | [yes!](http://binternet.skunky7dhv7nohsoalpwe3sxfz3fbkad7r3wk632riye25vqm3meqead.onion/) | [yes!](http://5cv2aw6jhe6la444vpn3jvo46442ls3ccgp3difx5ddlv5yf4hlq.b32.i2p/) | 🇷🇺﻿﻿ RU |
 | [bn.bloat.cat](https://bn.bloat.cat/) | no | no | 🇷🇴 RO |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
-| [binternet.privacyfucking.rocks](https://binternet.privacyfucking.rocks/) | no | no | 🇩🇪 DE |
 | [binternet.ducks.party](https://binternet.ducks.party) | no | no | 🇳🇱 NL |
 <br>
 
