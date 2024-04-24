@@ -38,6 +38,7 @@
 | [bn.bloat.cat](https://bn.bloat.cat/) | no | no | 🇷🇴 RO |
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
 | [binternet.ducks.party](https://binternet.ducks.party) | no | no | 🇳🇱 NL |
+| [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
 <br>
 
 
