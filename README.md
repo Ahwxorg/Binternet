@@ -39,6 +39,7 @@
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
 | [binternet.ducks.party](https://binternet.ducks.party) | no | no | 🇳🇱 NL |
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
+| [binternet.darkness.services](https://binternet.darkness.services) | no | no | 🇺🇸 US |
 <br>
 
 
