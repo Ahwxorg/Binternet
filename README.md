@@ -39,7 +39,7 @@
 | [bn.opnxng.com](https://bn.opnxng.com) | no | no | 🇸🇬 SG |
 | [binternet.ducks.party](https://binternet.ducks.party) | no | no | 🇳🇱 NL |
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
-| [binternet.darkness.services](https://binternet.darkness.services) | no | no | 🇺🇸 US |
+| [binternet.darkness.services](https://binternet.darkness.services) | [yes!](http://binternet.darknessrdor43qkl2ngwitj72zdavfz2cead4t5ed72bybgauww5lyd.onion/) | no | 🇺🇸 US |
 <br>
 
 
