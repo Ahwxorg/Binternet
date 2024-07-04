@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.20
 
 RUN apk add php83 php83-fpm php83-dom php83-curl php83-json php83-openssl nginx --no-cache
 RUN sed -i 's/user nginx;/user nobody;/' /etc/nginx/nginx.conf \
