@@ -2,5 +2,12 @@ services:
   binternet:
     container_name: binternet
     image: ghcr.io/ahwxorg/binternet:latest
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     ports:
-     - '8080:80'
+     - '8080:8080'
+    tmpfs:
+      - /var/log:noexec,nosuid,nodev
