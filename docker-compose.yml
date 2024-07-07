@@ -11,3 +11,4 @@ services:
      - '8080:8080'
     tmpfs:
       - /var/log:noexec,nosuid,nodev
+      - /var/lib:noexec,nosuid,nodev
