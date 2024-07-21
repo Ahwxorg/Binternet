@@ -2,7 +2,6 @@ services:
   binternet:
     container_name: binternet
     image: ghcr.io/ahwxorg/binternet:latest
-    read_only: true
     cap_drop:
       - ALL
     security_opt:
