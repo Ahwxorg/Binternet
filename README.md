@@ -41,6 +41,7 @@
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
 | [binternet.darkness.services](https://binternet.darkness.services) | [yes!](http://binternet.darknessrdor43qkl2ngwitj72zdavfz2cead4t5ed72bybgauww5lyd.onion/) | no | 🇺🇸 US |
 | [binternet.privacyredirect.com](https://binternet.privacyredirect.com/) | no | no | 🇫🇮 FI |
+| [binternet.lunar.icu](https://binternet.lunar.icu) | no | no | 🇩🇪 DE |
 <br>
 
 
