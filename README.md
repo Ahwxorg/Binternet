@@ -43,6 +43,7 @@
 | [binternet.privacyredirect.com](https://binternet.privacyredirect.com) | no | no | 🇫🇮 FI |
 | [binternet.lunar.icu](https://binternet.lunar.icu) | no | no | 🇩🇪 DE |
 | [binternet.bunk.lol](https://binternet.bunk.lol) | no | no | 🇮🇸 IS |
+| [pin.blitzw.in](https://pin.blitzw.in) | no | no | 🇩🇰 DK |
 <br>
 
 
