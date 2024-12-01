@@ -44,6 +44,7 @@
 | [binternet.lunar.icu](https://binternet.lunar.icu) | no | no | 🇩🇪 DE |
 | [binternet.bunk.lol](https://binternet.bunk.lol) | no | no | 🇮🇸 IS |
 | [pin.blitzw.in](https://pin.blitzw.in) | no | no | 🇩🇰 DK |
+| [binternet.canine.tools](https://binternet.canine.tools) | no | no | 🇺🇸 US |
 <br>
 
 
