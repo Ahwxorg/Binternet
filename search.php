@@ -55,7 +55,9 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
     }
 
     $data_param = urlencode(json_encode($data_param_obj));
-    $headers = [];
+    $headers = [
+        "x-pinterest-pws-handler: www/search/[scope].js"
+    ];
     
     if ($csrftoken !== null) {
         $headers[] = "x-csrftoken: $csrftoken";
