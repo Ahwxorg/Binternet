@@ -43,6 +43,7 @@
 | [binternet.lunar.icu](https://binternet.lunar.icu/) | no | no | 🇩🇪 DE |
 | [pin.blitzw.in](https://pin.blitzw.in/) | no | no | 🇩🇰 DK |
 | [binternet.canine.tools](https://binternet.canine.tools/) | no | no | 🇺🇸 US |
+| [bn.kuuro.net](https://bn.kuuro.net/) | no | no | 🇺🇸 US |
 <br>
 
 
