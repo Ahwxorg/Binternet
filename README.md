@@ -41,7 +41,6 @@
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
 | [binternet.privacyredirect.com](https://binternet.privacyredirect.com/) | no | no | 🇫🇮 FI |
 | [binternet.lunar.icu](https://binternet.lunar.icu/) | no | no | 🇩🇪 DE |
-| [pin.blitzw.in](https://pin.blitzw.in/) | no | no | 🇩🇰 DK |
 | [binternet.canine.tools](https://binternet.canine.tools/) | no | no | 🇺🇸 US |
 | [bn.kuuro.net](https://bn.kuuro.net/) | no | no | 🇺🇸 US |
 | [binternet.privadency.com](https://binternet.privadency.com/) | no | no | 🇩🇪 DE |
