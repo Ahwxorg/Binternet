@@ -33,16 +33,13 @@
 
 | Clearnet | TOR | I2P | Country |
 |-|-|-|-|
-| [binternet.revvy.de](https://binternet.revvy.de/) | [yes!](http://binternet.revvybrr6pvbx4n3j4475h4ghw4elqr4t5xo2vtd3gfpu2nrsnhh57id.onion/) | [yes!](http://revznkqdwy7nmlzql66x226g3qnapiooss3rg2uajbj4rypxjnba.b32.i2p/) | 🇫🇮 FI |
-| [binternet.darkness.services](https://binternet.darkness.services/) | [yes!](http://binternet.darknessrdor43qkl2ngwitj72zdavfz2cead4t5ed72bybgauww5lyd.onion/) | no | 🇺🇸 US |
+| [curate.liv.town](https://curate.liv.town/) | no | no | 🇳🇱 NL |
+| [binternet.nadeko.net](https://binternet.nadeko.net/) | [yes!](http://binternet.nadeko24jhlqccyfnmvynwkojcfzmub53m74y5b7l5e6hn55jlml4pqd.onion/) | no | 🇺🇸 US |
 | [bn.bloat.cat](https://bn.bloat.cat/) | no | no | 🇩🇪 DE |
 | [bn.opnxng.com](https://bn.opnxng.com/) | no | no | 🇸🇬 SG |
 | [binternet.ducks.party](https://binternet.ducks.party/) | no | no | 🇳🇱 NL |
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
-| [binternet.privacyredirect.com](https://binternet.privacyredirect.com/) | no | no | 🇫🇮 FI |
-| [binternet.lunar.icu](https://binternet.lunar.icu/) | no | no | 🇩🇪 DE |
 | [binternet.canine.tools](https://binternet.canine.tools/) | no | no | 🇺🇸 US |
-| [bn.kuuro.net](https://bn.kuuro.net/) | no | no | 🇺🇸 US |
 | [binternet.privadency.com](https://binternet.privadency.com/) | no | no | 🇩🇪 DE |
 <br>
 
