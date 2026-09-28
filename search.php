@@ -47,8 +47,13 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
     $data_param_obj = [
         "options" => [
             "query" => $query,
+			"scope" => "pins",
+			"filter_genai" => true,
+			"source_url" => "/search/pins/?q=$query&rs=typed",
+			"page_size" => 50,
         ],
     ];
+
     
     if ($bookmark !== null) {
         $data_param_obj["options"]["bookmarks"] = [$bookmark];
@@ -56,7 +61,13 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
 
     $data_param = urlencode(json_encode($data_param_obj));
     $headers = [
-        "x-pinterest-pws-handler: www/search/[scope].js"
+        "x-pinterest-pws-handler: www/search/[scope].js",
+	"User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:156.0) Gecko/20100101 Firefox/156.0",
+	"Referer: https://www.pinterest.com/",
+	"x-requested-with: XMLHttpRequest",
+	"x-pinterest-appstate: active",
+	"x-pinterest-source-url: /search/pins/?q=kitties&rs=typed",
+	"x-pinterest-pws-handler: www/search/[scope].js",
     ];
     
     if ($csrftoken !== null) {
@@ -64,8 +75,9 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
         $headers[] = "cookie: csrftoken=$csrftoken";
     }
 
-    $finalurl = $bookmark === null ? "$url?data=$data_param" : $url;
     
+    $finalurl = $bookmark === null ? "$url?data=$data_param" : $url;
+
     $ch = curl_init($finalurl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADERFUNCTION, $header_function);
@@ -93,8 +105,10 @@ $search = function ($query, $bookmark) use ($prepare_search_curl_obj) {
             $image = $result->images->orig;
             $url = $image->url;
             $images[] = $url;
-            echo "<a class='img-result' href='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
-            echo "<img loading='lazy' src='/image_proxy.php?url=" . htmlspecialchars($url) . "'></a>";
+            echo "<div class='img-result'>";
+            echo "<a href='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
+            echo "<img loading='lazy' src='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
+            echo "</div>";
         }
     } else {
         echo "<p>No results found.</p>";
