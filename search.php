@@ -31,6 +31,8 @@ $url = "https://www.pinterest.com/resource/BaseSearchResource/get/";
 class SearchResult
 {
     public $images;
+    public $authorName;
+    public $authorUser;
     public $bookmark;
 }
 
@@ -103,11 +105,15 @@ $search = function ($query, $bookmark) use ($prepare_search_curl_obj) {
     if ($data && isset($data->resource_response->data->results)) {
         foreach ($data->resource_response->data->results as $result) {
             $image = $result->images->orig;
+            $authorName = $result->pinner->full_name;
+            $authorUser = $result->pinner->username;
             $url = $image->url;
             $images[] = $url;
             echo "<div class='img-result'>";
             echo "<a href='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
             echo "<img loading='lazy' src='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
+	    echo "<p>image by: <a class='uploader' href='https://pinterest.com/" . $authorUser . "'>" . $authorName . "</a></p>";
+	    echo "</a>";
             echo "</div>";
         }
     } else {
