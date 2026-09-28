@@ -1,10 +1,10 @@
 :root {
-  --accent-color:#12e8b9;
+  --accent-color: #12e8b9;
   --fg-color: white;
   --border-color: rgb(97, 97, 97);
   --main: #2a2b2b;
   --main-second: #1f2120;
-  
+
 }
 
 body {
@@ -17,11 +17,22 @@ body {
   font-size: 16px;
 }
 
+.img-result h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.img-result p {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
 input:focus {
   border: 1px solid var(--border-color);
 }
 
-.accent{
+.accent {
   color: var(--accent-color);
 }
 
@@ -33,7 +44,7 @@ input:focus {
   transform: translate(-50%, -50%);
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -42,8 +53,11 @@ input:focus {
 }
 
 .mainContainer p {
-  margin-bottom:30px;
+  margin-bottom: 30px;
   margin-top: 5px;
+}
+
+.resultContainer {
 
 }
 
@@ -74,7 +88,7 @@ footer {
   bottom: 0;
 }
 
-footer a{
+footer a {
   margin-right: 30px;
 }
 
@@ -92,7 +106,7 @@ a {
   color: var(--fg-color);
 }
 
-footer a:hover{
+footer a:hover {
   color: var(--accent-color);
 }
 
@@ -129,17 +143,17 @@ button {
 
 /* search css start */
 
-.search-container{
+.search-container {
   display: flex;
   align-items: center;
   margin: 20px 20px 40px 20px;
 }
 
-.search-container h1{
+.search-container h1 {
   margin: 0;
 }
 
-.search-container input{
+.search-container input {
   border-radius: 10px;
   margin-left: 100px;
 }
@@ -148,19 +162,22 @@ button {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius:  0.2rem;
+  border-radius: 0.2rem;
 }
 
-.img-container{
+.img-container {
   column-count: auto;
   column-width: 14rem;
   column-gap: 0.5rem;
-  padding: 1rem;
 }
 
 .img-result {
-  margin-bottom: 0.5rem;
+  padding: 0;
   display: block;
+  justify-content: start;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 16px;
 }
 
 /* search css end */
@@ -224,16 +241,16 @@ hr.small-line {
 
 @media only screen and (max-width: 750px) {
 
-  body{
+  body {
     font-size: 14px;
   }
 
   .mainContainer h1 {
     font-size: 35px;
-  
+
   }
 
-  input{
+  input {
     width: 100%;
   }
 
@@ -241,7 +258,7 @@ hr.small-line {
     width: 95%;
   }
 
-  .search-container{
+  .search-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -299,6 +316,13 @@ hr.small-line {
     width: 220px;
     height: auto;
   }
+
   /* donate css end */
 
+}
+
+.uploader {
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
 }
