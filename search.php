@@ -56,7 +56,6 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
         ],
     ];
 
-    
     if ($bookmark !== null) {
         $data_param_obj["options"]["bookmarks"] = [$bookmark];
     }
@@ -77,9 +76,7 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
         $headers[] = "cookie: csrftoken=$csrftoken";
     }
 
-    
     $finalurl = $bookmark === null ? "$url?data=$data_param" : $url;
-
     $ch = curl_init($finalurl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADERFUNCTION, $header_function);

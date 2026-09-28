@@ -1,16 +1,34 @@
-:root {
-  --accent-color: #12e8b9;
-  --fg-color: white;
-  --border-color: rgb(97, 97, 97);
-  --main: #2a2b2b;
-  --main-second: #1f2120;
+@media (prefers-color-scheme: light) {
+  :root {
+    --main: #fff;
+    --main-second: #e6e5e6;
+    --background-hover: rgb(0 0 0 / 0.125);
+    --fg-color: #000;
+    --accent-color: #0ebe98;
+    --accent-color-hover: #0daf8c;
+  }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main: #1f2120;
+    --main-second: #2d2e2e;
+    --background-hover: #343736;
+    --fg-color: #fff;
+    --accent-color: #12e8b9;
+    --accent-color-hover: #0fc79f;
+  }
+}
+
+:root {
+  --spacing-page: 1.25rem;
+  --spacing-images: 1em;
 }
 
 body {
   background-color: var(--main);
   color: var(--fg-color);
-  font-family: verdana, arial, sans-serif;
+  font-family: system-ui, Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -26,10 +44,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   margin-top: 0 !important;
-}
-
-input:focus {
-  border: 1px solid var(--border-color);
 }
 
 .accent {
@@ -58,12 +72,12 @@ input:focus {
 }
 
 .resultContainer {
-
+  margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .mainContainer h1 {
   font-size: 50px;
-
 }
 
 .bodyText {
@@ -84,7 +98,7 @@ footer {
   width: 100vw;
   padding: 10px;
   background-color: var(--main-second);
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
 
@@ -106,6 +120,24 @@ a {
   color: var(--fg-color);
 }
 
+a[href^="/search.php?"] {
+  background-color: var(--main-second);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  float: right;
+  margin: var(--spacing-page);
+  font-size: 11pt;
+  font-weight: normal;
+}
+
+a[href^="/search.php?"]:hover {
+  background-color: var(--background-hover);
+}
+
+h2 {
+  margin: 0;
+}
+
 footer a:hover {
   color: var(--accent-color);
 }
@@ -117,28 +149,38 @@ footer a:hover {
   justify-content: center;
 }
 
-
 input {
   width: 500px;
   outline: none;
-  color: white;
+  color: var(--fg-color);
   background-color: var(--main-second);
   border: 1px solid var(--main-second);
-  border-radius: 10px 0px 0px 10px;
-  padding: 15px;
+  border-radius: 1.5rem 0 0 1.5rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
   font-size: inherit;
+}
 
+input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+input:hover {
+  background-color: var(--background-hover);
 }
 
 button {
-  padding: 15px;
-  color: var(--main-second);
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  color: var(--main);
   background-color: var(--accent-color);
-  border: 0;
-  border-radius: 0px 10px 10px 0px;
+  border: 1px solid var(--accent-color);
+  border-radius: 0 1.5rem 1.5rem 0;
   cursor: pointer;
-  font-size: 15px;
   font-weight: bold;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: var(--accent-color-hover);
 }
 
 /* search css start */
@@ -146,43 +188,47 @@ button {
 .search-container {
   display: flex;
   align-items: center;
-  margin: 20px 20px 40px 20px;
+  margin: var(--spacing-page);
+  margin-bottom: 2rem;
 }
 
 .search-container h1 {
   margin: 0;
+  font-size: 1.25rem;
 }
 
 .search-container input {
-  border-radius: 10px;
-  margin-left: 100px;
+  border-radius: 1.5rem;
+  margin-left: var(--spacing-page);
 }
 
 .img-result img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 0.2rem;
+  border-radius: 1em;
+}
+
+@supports (corner-shape: squircle) {
+  .img-result img {
+    corner-shape: squircle;
+    border-radius: 2em;
+  }
 }
 
 .img-container {
   column-count: auto;
   column-width: 14rem;
-  column-gap: 0.5rem;
+  column-gap: var(--spacing-images);
+  padding: 0 var(--spacing-page) 0;
 }
 
 .img-result {
-  padding: 0;
+  margin-bottom: calc(var(--spacing-images) - 0.25rem);
   display: block;
-  justify-content: start;
-  position: relative;
-  cursor: pointer;
-  margin-bottom: 16px;
 }
 
 /* search css end */
-
-
 
 /* donate css start */
 
@@ -190,7 +236,12 @@ button {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: var(--spacing-page);
   margin-bottom: 100px;
+}
+
+.donate-container h2 {
+  margin-bottom: 1.25rem;
 }
 
 .flexbox-column {
@@ -237,17 +288,13 @@ hr.small-line {
 
 /* donate css end */
 
-
-
 @media only screen and (max-width: 750px) {
-
   body {
     font-size: 14px;
   }
 
   .mainContainer h1 {
     font-size: 35px;
-
   }
 
   input {
@@ -256,6 +303,20 @@ hr.small-line {
 
   .centered {
     width: 95%;
+  }
+
+  .img-result {
+    margin-bottom: calc(var(--spacing-images) - 0.25em);
+  }
+
+  .search-container input {
+    width: calc(100% - 2 * (var(--spacing-page) + 9px));
+    margin-top: 1.25rem;
+    margin-right: var(--spacing-page);
+  }
+
+  button {
+    font-size: 14px;
   }
 
   .search-container {
@@ -269,7 +330,6 @@ hr.small-line {
     margin-top: 20px;
     margin-left: 0;
   }
-
 
   /* dontate css start*/
 
@@ -316,13 +376,5 @@ hr.small-line {
     width: 220px;
     height: auto;
   }
-
   /* donate css end */
-
-}
-
-.uploader {
-  text-decoration: underline;
-  text-decoration-line: underline;
-  text-underline-offset: 2px;
 }
