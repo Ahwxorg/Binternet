@@ -27,7 +27,7 @@
         </div>
           
         <div class="flex-row">
-          <a href="https://ko-fi.com/Ahwxorg" target="_blank"
+          <a href="https://ko-fi.com/livtown" target="_blank"
             ><img
               src="/static/img/kofi.png"
               alt="kifi img"
