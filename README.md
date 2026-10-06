@@ -41,6 +41,7 @@
 | [binternet.4o1x5.dev](https://binternet.4o1x5.dev/) | no | no | 🇭🇺 HU |
 | [binternet.canine.tools](https://binternet.canine.tools/) | no | no | 🇺🇸 US |
 | [binternet.privadency.com](https://binternet.privadency.com/) | no | no | 🇩🇪 DE |
+| [binternet.utilibre.org](https://binternet.utilibre.org/) | [yes](http://ued2jl2ahvngdegugysin2fa6malo6omyf33j5tpfgex47erv453wbad.onion/) | no | 🇩🇪 DE |
 <br>
 
 
