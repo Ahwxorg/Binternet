@@ -137,7 +137,7 @@ if ($result->bookmark !== null) {
     $bookmark_encoded = urlencode($result->bookmark);
     $csrftoken_encoded = $csrftoken ? urlencode($csrftoken) : "";
 
-    echo "<h2 style=\"text-align: center;\"><a href=\"/search.php?q=$query_encoded&bookmark=$bookmark_encoded&csrftoken=$csrftoken_encoded\">Next page</a></h2><br><br><br>";
+    echo "<h2 class=\"next-page\"><a href=\"/search.php?q=$query_encoded&bookmark=$bookmark_encoded&csrftoken=$csrftoken_encoded\">Next page</a></h2><br><br><br>";
 }
 
 include "misc/footer.php";

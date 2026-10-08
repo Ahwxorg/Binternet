@@ -138,6 +138,10 @@ h2 {
   margin: 0;
 }
 
+.next-page {
+  text-align: center;
+}
+
 footer a:hover {
   color: var(--accent-color);
 }
