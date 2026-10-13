@@ -74,7 +74,7 @@
       }
       $params["bookmark"] = $bookmark;
       $href = htmlspecialchars("/$page?" . http_build_query($params));
-      echo "<h2 style=\"text-align: center;\"><a href=\"$href\">Next page</a></h2><br><br><br>";
+      echo "<h2 class=\"next-page\"><a href=\"$href\">Next page</a></h2><br><br><br>";
     }
 
     function error_page($status, $message)
