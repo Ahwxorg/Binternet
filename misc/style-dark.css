@@ -228,6 +228,16 @@ button:hover {
   display: block;
 }
 
+.info {
+  padding: 0 var(--spacing-page);
+}
+
+.info img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 1em;
+}
+
 /* search css end */
 
 /* donate css start */
