@@ -22,9 +22,21 @@
 
 <h2 align="center">Features:</h2>
 
-* API-less Pinterest image searching.
+* API-less Pinterest image, GIF and video searching.
 * Pinterest doesn't see the IP of the end user, only the instance IP;
 * Image proxy (thanks to [LibreX](https://github.com/hnhx/LibreX)'s code).
+* Pinterest pin, profile and board URLs resolve to native Binternet pages.
+* HEIC originals fall back to Pinterest's 736x JPG variant.
+* Filter search results by images, GIFs or videos.
+* Video playback and downloads work on pin, profile and board pages.
+* Downloads use the pin title as the filename.
+* Video support: MP4 plays natively, HLS plays through the bundled [hls.js](https://github.com/video-dev/hls.js) player; GIFs animate inline.
+* Video data loads only after you press play; until then only the poster is fetched.
+* Short-lived search cache, streamed media with browser caching, and lazy posters/players.
+* One-click downloads for images, GIFs and videos; HLS videos are remuxed to MP4 with ffmpeg.
+* Video manifests and segments are proxied, so Pinterest never sees the visitor's IP during playback or download.
+
+> Video downloads need `ffmpeg` on `PATH`. The Docker image includes it; source installs must provide it.
 
 
 <h2 align="center">Instances:</h2>
@@ -60,3 +72,5 @@ This section has moved to [the wiki](https://github.com/Ahwxorg/Binternet/wiki/I
 
 * [LibreX](https://github.com/hnhx/librex) - a bit of misc code.
 * [LibreY](https://github.com/Ahwxorg/LibreY) - image proxy
+* [hls.js](https://github.com/video-dev/hls.js) - HLS video playback, Apache-2.0.
+* [vlnst](https://github.com/vlnst) - Pinterest URL scheme support, pin/user/board pages, HEIC fallback, PHP 8.5 image and CI updates.

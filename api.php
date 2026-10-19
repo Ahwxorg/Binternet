@@ -1,7 +1,7 @@
 <?php
 
 // Prepare cURL object with options for the search query
-function prepareSearchCurlObj($query, $bookmark = null, $url, $csrftoken = null, $header_function) {
+function prepareSearchCurlObj($query, $bookmark, $url, $csrftoken, $header_function) {
     $data_param_obj = [
         "options" => [
             "query" => $query,
@@ -41,11 +41,8 @@ function search($query, $bookmark, $url, $csrftoken, $header_function) {
     if ($response === false) {
         // Handle cURL error
         $error = curl_error($ch);
-        curl_close($ch);
         return json_encode(['error' => 'CURL Error: ' . $error]);
     }
-
-    curl_close($ch); // Close cURL handle
 
     $data = json_decode($response);
     $images = [];
