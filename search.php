@@ -1,4 +1,4 @@
-<?php require "misc/header.php"; ?>
+<?php require "misc/header.php"; require "misc/tools.php"; ?>
 <title>
 <?php
 $query = htmlspecialchars(trim($_REQUEST["q"] ?? ''));
@@ -101,10 +101,12 @@ $search = function ($query, $bookmark) use ($prepare_search_curl_obj) {
     
     if ($data && isset($data->resource_response->data->results)) {
         foreach ($data->resource_response->data->results as $result) {
-            $image = $result->images->orig;
             $authorName = $result->pinner->full_name;
             $authorUser = $result->pinner->username;
-            $url = $image->url;
+            $url = pin_image($result);
+            if ($url === null) {
+                continue;
+            }
             $images[] = $url;
             echo "<div class='img-result'>";
             echo "<a href='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
