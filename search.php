@@ -42,6 +42,7 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
             "filter_genai" => true,
             "source_url" => "/search/pins/?q=$query&rs=typed",
             "page_size" => 50,
+            "field_set_key" => "detailed",
         ],
     ];
 
@@ -154,6 +155,8 @@ $search = function ($query, $bookmark) use ($prepare_search_curl_obj, &$csrftoke
             }
 
             $pins[] = [
+                "id" => (string) ($result->id ?? ''),
+                "aggregated_id" => aggregated_pin_id($result),
                 "image" => $image,
                 "display" => $display,
                 "poster" => $poster,
@@ -290,6 +293,7 @@ foreach ($pins as $index => $pin) {
                 . "' title='Download video' aria-label='Download video'>"
                 . $download_icon . "</a>";
         }
+        echo pin_comments_link($pin["id"], $pin["aggregated_id"]);
         echo "</div>";
     } else {
         $href = media_proxy_path($pin["image"]);
@@ -327,6 +331,7 @@ foreach ($pins as $index => $pin) {
                 . "' title='" . $label . "' aria-label='" . $label . "'>"
                 . $download_icon . "</a>";
         }
+        echo pin_comments_link($pin["id"], $pin["aggregated_id"]);
         echo "</div>";
     }
 

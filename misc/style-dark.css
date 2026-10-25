@@ -321,10 +321,10 @@ button:hover {
   margin-left: 0.12rem;
 }
 
-.media-download {
+.media-download,
+.media-comments {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
   z-index: 2;
   display: grid;
   place-items: center;
@@ -337,20 +337,32 @@ button:hover {
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.18);
 }
 
-.media-download .download-icon {
+.media-download {
+  right: 0.5rem;
+}
+
+.media-comments {
+  right: 2.85rem;
+}
+
+.media-download .download-icon,
+.media-comments .comment-icon {
   display: block;
   width: 1.05rem;
   height: 1.05rem;
 }
 
 .media-download:hover,
-.media-download:focus-visible {
+.media-download:focus-visible,
+.media-comments:hover,
+.media-comments:focus-visible {
   background-color: var(--background-hover);
   color: var(--accent-color);
   opacity: 1;
 }
 
-.media-download:focus-visible {
+.media-download:focus-visible,
+.media-comments:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }

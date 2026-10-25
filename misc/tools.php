@@ -93,6 +93,81 @@ function play_icon_svg()
     . '</svg>';
 }
 
+// Every media tile gets a shortcut to the pin page, where comments live.
+// Anonymous search returns opaque pin ids, so fall back to the aggregated id.
+function pin_comments_link($id, $aggregated_id = "")
+{
+  if (is_string($id) && preg_match('/^\d+$/D', $id)) {
+    $url = "/pin.php?id=" . rawurlencode($id);
+  } elseif (is_string($aggregated_id) && preg_match('/^\d+$/D', $aggregated_id)) {
+    $url = "/pin.php?agg=" . rawurlencode($aggregated_id);
+  } else {
+    return '';
+  }
+  return "<a class='media-comments' href='$url#comments'"
+    . " title='View comments' aria-label='View comments'>"
+    . '<svg class="comment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">'
+    . '<path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/>'
+    . '</svg></a>';
+}
+
+// Search feeds carry an opaque pin id, but the comments API only needs the
+// aggregated pin id stored in a base64 node string.
+function aggregated_pin_id($pin)
+{
+  $node = (string) ($pin->aggregated_pin_data->node_id ?? "");
+  if ($node === "") {
+    return "";
+  }
+  $decoded = base64_decode($node, true);
+  if (!is_string($decoded)
+    || !preg_match('/^AggregatedPinData:(\d+)$/D', $decoded, $matches)) {
+    return "";
+  }
+  return $matches[1];
+}
+
+function pin_comments($aggregated_pin_id)
+{
+  if (!is_string($aggregated_pin_id) || !preg_match('/^\d+$/D', $aggregated_pin_id)) {
+    return [];
+  }
+  $response = pinterest_resource("UnifiedCommentsResource", "/pin/", "www/pin/[id].js", [
+    "aggregated_pin_id" => $aggregated_pin_id,
+    "comment_featured_ids" => [],
+    "page_size" => 10,
+    "redux_normalize_feed" => true,
+    "is_reversed" => false,
+  ], true);
+  return is_array($response->data ?? null) ? $response->data : [];
+}
+
+function print_comments($comments)
+{
+  if (empty($comments)) {
+    return;
+  }
+  echo "<div class='comments' id='comments'><h3>Comments</h3>";
+  foreach ($comments as $comment) {
+    $text = trim((string) ($comment->text ?? ""));
+    if ($text === "") {
+      continue;
+    }
+    $author = (string) ($comment->user->full_name ?? "");
+    if ($author === "") {
+      $author = (string) ($comment->user->username ?? "") ?: "Pinterest user";
+    }
+    $created = strtotime((string) ($comment->created_at ?? ""));
+    echo "<div class='comment'>";
+    echo "<p class='comment-meta'>" . htmlspecialchars($author);
+    if ($created !== false) {
+      echo " &middot; " . date("j M Y", $created);
+    }
+    echo "</p><p>" . nl2br(htmlspecialchars($text)) . "</p></div>";
+  }
+  echo "</div>";
+}
+
 function pins_have_video($pins)
 {
   foreach ($pins as $pin) {
@@ -129,6 +204,8 @@ function print_pins($pins)
     $eager = $index < 4;
     $video = pick_video($pin->videos ?? null);
     $image = pin_image($pin);
+    $id = (string) ($pin->id ?? "");
+    $comments_link = pin_comments_link($id);
 
     if ($video !== null) {
       $video_path = media_proxy_path($video["url"]);
@@ -158,6 +235,7 @@ function print_pins($pins)
         echo "<a class='media-download' href='" . htmlspecialchars($download)
           . "' download='" . htmlspecialchars($download_name)
           . "' title='Download video' aria-label='Download video'>" . download_icon_svg() . "</a>";
+        echo $comments_link;
         echo "</div>";
         echo $credit;
         echo "</div>";
@@ -177,7 +255,6 @@ function print_pins($pins)
       continue;
     }
 
-    $id = (string) ($pin->id ?? "");
     $link = ($id !== "" && preg_match('/^\d+$/D', $id))
       ? "/pin.php?id=" . rawurlencode($id)
       : $src;
@@ -211,6 +288,7 @@ function print_pins($pins)
         . "' title='" . $label . "' aria-label='" . $label . "'>"
         . download_icon_svg() . "</a>";
     }
+    echo $comments_link;
     echo "</div>";
     echo $credit;
     echo "</div>";

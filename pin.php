@@ -2,6 +2,42 @@
 
 require "misc/tools.php";
 
+// Search results only expose an opaque pin id, so their comments button uses
+// the aggregated id and lands on this comments-only view.
+$aggregated = $_GET["agg"] ?? null;
+if ($aggregated !== null) {
+    if (!is_string($aggregated) || !preg_match('/^\d+$/D', $aggregated)) {
+        not_found();
+    }
+    $comments = pin_comments($aggregated);
+    require "misc/header.php";
+    ?>
+    <title>Comments - Binternet</title>
+    </head>
+    <body>
+        <header class="search-header">
+            <form class="search-container" action="/search.php" method="get" autocomplete="off">
+                <h1><a class="no-decoration accent" href="/">Binternet</a></h1>
+                <div class="search-field">
+                    <input type="text" name="q" placeholder="Search images and videos">
+                </div>
+            </form>
+        </header>
+        <div class="info">
+            <h2>Comments</h2>
+            <?php if (empty($comments)) { ?>
+                <p>No comments yet.</p>
+            <?php } else {
+                print_comments($comments);
+            } ?>
+        </div>
+    <?php include "misc/footer.php"; ?>
+    </body>
+    </html>
+    <?php
+    exit();
+}
+
 $id = $_GET["id"] ?? "";
 if (!is_string($id) || !preg_match('/^\d+$/D', $id)) {
     not_found();
@@ -65,20 +101,7 @@ if ($author_name === "") {
 }
 
 // Comments hang off Pinterest's aggregated pin id, not the pin id itself.
-$comments = [];
-$aggregated_pin_id = (string) ($pin->aggregated_pin_data->id ?? "");
-if ($aggregated_pin_id !== "") {
-    $comments_response = pinterest_resource("UnifiedCommentsResource", "/pin/$id/", "www/pin/[id].js", [
-        "aggregated_pin_id" => $aggregated_pin_id,
-        "comment_featured_ids" => [],
-        "page_size" => 10,
-        "redux_normalize_feed" => true,
-        "is_reversed" => false,
-    ], true);
-    if (is_array($comments_response->data ?? null)) {
-        $comments = $comments_response->data;
-    }
-}
+$comments = pin_comments((string) ($pin->aggregated_pin_data->id ?? ""));
 
 require "misc/header.php";
 ?>
@@ -116,28 +139,7 @@ require "misc/header.php";
         <?php if ($author_user !== "") { ?>
             <p>media by: <a class="uploader" href="/user.php?user=<?php echo rawurlencode($author_user); ?>"><?php echo htmlspecialchars($author_name); ?></a></p>
         <?php } ?>
-        <?php if ($comments) { ?>
-            <div class="comments">
-                <h3>Comments</h3>
-                <?php foreach ($comments as $comment) {
-                    $text = trim((string) ($comment->text ?? ""));
-                    if ($text === "") {
-                        continue;
-                    }
-                    $comment_author = (string) ($comment->user->full_name ?? "");
-                    if ($comment_author === "") {
-                        $comment_author = (string) ($comment->user->username ?? "") ?: "Pinterest user";
-                    }
-                    $created = strtotime((string) ($comment->created_at ?? ""));
-                    echo "<div class='comment'>";
-                    echo "<p class='comment-meta'>" . htmlspecialchars($comment_author);
-                    if ($created !== false) {
-                        echo " &middot; " . date("j M Y", $created);
-                    }
-                    echo "</p><p>" . nl2br(htmlspecialchars($text)) . "</p></div>";
-                } ?>
-            </div>
-        <?php } ?>
+        <?php print_comments($comments); ?>
     </div>
 <?php include "misc/footer.php"; ?>
 </body>
