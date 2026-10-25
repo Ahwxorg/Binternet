@@ -2,6 +2,7 @@
 .git/
 .gitignore
 .dockerignore
+.rae/
 docker-compose.yml
 Dockerfile
 README.md
