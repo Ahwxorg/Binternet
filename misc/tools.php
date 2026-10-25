@@ -19,7 +19,7 @@ function request($url)
 
 // Pinterest rejects the request ("Invalid Resource Request") unless the
 // pws-handler header names the web page that would make this call.
-function pinterest_resource($resource, $source_url, $handler, $options)
+function pinterest_resource($resource, $source_url, $handler, $options, bool $soft_fail = false)
 {
   $data = urlencode(json_encode(["options" => $options]));
   $url = "https://www.pinterest.com/resource/$resource/get/?source_url=" . urlencode($source_url) . "&data=$data";
@@ -51,11 +51,17 @@ function pinterest_resource($resource, $source_url, $handler, $options)
     return null;
   }
   if ($body === false || $status !== 200) {
+    if ($soft_fail) {
+      return null;
+    }
     error_page(502, "Pinterest did not respond, try again later");
   }
 
   $response = json_decode($body);
   if (!isset($response->resource_response)) {
+    if ($soft_fail) {
+      return null;
+    }
     error_page(502, "Pinterest did not respond, try again later");
   }
 

@@ -7,6 +7,8 @@
     <meta name="referrer" content="no-referrer"/>
 <?php $css_version = @filemtime(__DIR__ . "/style-dark.css") ?: 1; ?>
     <link rel="stylesheet" type="text/css" href="misc/style-dark.css?v=<?php echo $css_version; ?>">
+<?php $suggest_version = @filemtime(__DIR__ . "/../static/js/suggest.js") ?: 1; ?>
+    <script src="/static/js/suggest.js?v=<?php echo $suggest_version; ?>" defer></script>
 <?php if (!empty($needs_player)): ?>
 <?php $player_version = @filemtime(__DIR__ . "/../static/js/player.js") ?: 1; ?>
     <script src="/static/js/player.js?v=<?php echo $player_version; ?>" defer></script>

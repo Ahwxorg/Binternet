@@ -28,6 +28,8 @@
 * Pinterest pin, profile and board URLs resolve to native Binternet pages.
 * HEIC originals fall back to Pinterest's 736x JPG variant.
 * Filter search results by images, GIFs or videos.
+* Search suggestions from Pinterest's typeahead API while typing.
+* Comments on pin pages.
 * Video playback and downloads work on pin, profile and board pages.
 * Downloads use the pin title as the filename.
 * Video support: MP4 plays natively, HLS plays through the bundled [hls.js](https://github.com/video-dev/hls.js) player; GIFs animate inline.
@@ -35,6 +37,8 @@
 * Short-lived search cache, streamed media with browser caching, and lazy posters/players.
 * One-click downloads for images, GIFs and videos; HLS videos are remuxed to MP4 with ffmpeg.
 * Video manifests and segments are proxied, so Pinterest never sees the visitor's IP during playback or download.
+
+> The Pinterest endpoints behind these pages are documented in [docs/pinterest-api.md](docs/pinterest-api.md).
 
 > Video downloads need `ffmpeg` on `PATH`. The Docker image includes it; source installs must provide it.
 

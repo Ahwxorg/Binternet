@@ -64,6 +64,22 @@ if ($author_name === "") {
     $author_name = $author_user;
 }
 
+// Comments hang off Pinterest's aggregated pin id, not the pin id itself.
+$comments = [];
+$aggregated_pin_id = (string) ($pin->aggregated_pin_data->id ?? "");
+if ($aggregated_pin_id !== "") {
+    $comments_response = pinterest_resource("UnifiedCommentsResource", "/pin/$id/", "www/pin/[id].js", [
+        "aggregated_pin_id" => $aggregated_pin_id,
+        "comment_featured_ids" => [],
+        "page_size" => 10,
+        "redux_normalize_feed" => true,
+        "is_reversed" => false,
+    ], true);
+    if (is_array($comments_response->data ?? null)) {
+        $comments = $comments_response->data;
+    }
+}
+
 require "misc/header.php";
 ?>
 <title><?php echo $title; ?> - Binternet</title>
@@ -99,6 +115,28 @@ require "misc/header.php";
         <?php } ?>
         <?php if ($author_user !== "") { ?>
             <p>media by: <a class="uploader" href="/user.php?user=<?php echo rawurlencode($author_user); ?>"><?php echo htmlspecialchars($author_name); ?></a></p>
+        <?php } ?>
+        <?php if ($comments) { ?>
+            <div class="comments">
+                <h3>Comments</h3>
+                <?php foreach ($comments as $comment) {
+                    $text = trim((string) ($comment->text ?? ""));
+                    if ($text === "") {
+                        continue;
+                    }
+                    $comment_author = (string) ($comment->user->full_name ?? "");
+                    if ($comment_author === "") {
+                        $comment_author = (string) ($comment->user->username ?? "") ?: "Pinterest user";
+                    }
+                    $created = strtotime((string) ($comment->created_at ?? ""));
+                    echo "<div class='comment'>";
+                    echo "<p class='comment-meta'>" . htmlspecialchars($comment_author);
+                    if ($created !== false) {
+                        echo " &middot; " . date("j M Y", $created);
+                    }
+                    echo "</p><p>" . nl2br(htmlspecialchars($text)) . "</p></div>";
+                } ?>
+            </div>
         <?php } ?>
     </div>
 <?php include "misc/footer.php"; ?>

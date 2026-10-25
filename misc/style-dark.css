@@ -408,6 +408,30 @@ button:hover {
   margin-bottom: 1rem;
 }
 
+.comments {
+  max-width: 46rem;
+  margin-top: 1.5rem;
+}
+
+.comments h3 {
+  margin-bottom: 0.25rem;
+}
+
+.comment {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--main-second);
+}
+
+.comment p {
+  margin: 0.2rem 0;
+}
+
+.comment-meta {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 /* search css end */
 
 /* donate css start */
