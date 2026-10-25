@@ -29,7 +29,7 @@
 * HEIC originals fall back to Pinterest's 736x JPG variant.
 * Filter search results by images, GIFs or videos.
 * Search suggestions from Pinterest's typeahead API while typing.
-* Comments on pin pages, with a shortcut next to every download button.
+* Comments on pin pages with replies and pagination, plus a shortcut next to every download button.
 * Video playback and downloads work on pin, profile and board pages.
 * Downloads use the pin title as the filename.
 * Video support: MP4 plays natively, HLS plays through the bundled [hls.js](https://github.com/video-dev/hls.js) player; GIFs animate inline.

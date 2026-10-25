@@ -127,19 +127,72 @@ function aggregated_pin_id($pin)
   return $matches[1];
 }
 
-function pin_comments($aggregated_pin_id)
+function pin_comments($aggregated_pin_id, $bookmark = null)
 {
   if (!is_string($aggregated_pin_id) || !preg_match('/^\d+$/D', $aggregated_pin_id)) {
-    return [];
+    return ["comments" => [], "bookmark" => null];
   }
-  $response = pinterest_resource("UnifiedCommentsResource", "/pin/", "www/pin/[id].js", [
+  $options = [
     "aggregated_pin_id" => $aggregated_pin_id,
     "comment_featured_ids" => [],
     "page_size" => 10,
     "redux_normalize_feed" => true,
     "is_reversed" => false,
+  ];
+  if (is_string($bookmark) && $bookmark !== "") {
+    $options["bookmarks"] = [$bookmark];
+  }
+  $response = pinterest_resource("UnifiedCommentsResource", "/pin/", "www/pin/[id].js", $options, true);
+  $next = $response->bookmark ?? null;
+  return [
+    "comments" => is_array($response->data ?? null) ? $response->data : [],
+    "bookmark" => is_string($next) && $next !== "" ? $next : null,
+  ];
+}
+
+function comment_replies($comment_id)
+{
+  if (!is_string($comment_id) || !preg_match('/^\d+$/D', $comment_id)) {
+    return [];
+  }
+  $response = pinterest_resource("AggregatedCommentReplyFeedResource", "/pin/", "www/pin/[id].js", [
+    "isUnifiedComment" => true,
+    "objectId" => $comment_id,
+    "redux_normalize_feed" => true,
+    "page_size" => 10,
   ], true);
   return is_array($response->data ?? null) ? $response->data : [];
+}
+
+function print_comment($comment, $reply = false)
+{
+  $text = trim((string) ($comment->text ?? ""));
+  if ($text === "") {
+    return;
+  }
+  $author = (string) ($comment->user->full_name ?? "");
+  if ($author === "") {
+    $author = (string) ($comment->user->username ?? "") ?: "Pinterest user";
+  }
+  $created = strtotime((string) ($comment->created_at ?? ""));
+
+  echo "<div class='comment" . ($reply ? " comment-reply" : "") . "'>";
+  echo "<p class='comment-meta'>" . htmlspecialchars($author);
+  if ($created !== false) {
+    echo " &middot; " . date("j M Y", $created);
+  }
+  echo "</p><p>" . nl2br(htmlspecialchars($text)) . "</p>";
+  if (!$reply && (int) ($comment->comment_count ?? 0) > 0) {
+    $replies = comment_replies((string) ($comment->id ?? ""));
+    if ($replies) {
+      echo "<div class='comment-replies'>";
+      foreach ($replies as $item) {
+        print_comment($item, true);
+      }
+      echo "</div>";
+    }
+  }
+  echo "</div>";
 }
 
 function print_comments($comments)
@@ -149,23 +202,26 @@ function print_comments($comments)
   }
   echo "<div class='comments' id='comments'><h3>Comments</h3>";
   foreach ($comments as $comment) {
-    $text = trim((string) ($comment->text ?? ""));
-    if ($text === "") {
-      continue;
-    }
-    $author = (string) ($comment->user->full_name ?? "");
-    if ($author === "") {
-      $author = (string) ($comment->user->username ?? "") ?: "Pinterest user";
-    }
-    $created = strtotime((string) ($comment->created_at ?? ""));
-    echo "<div class='comment'>";
-    echo "<p class='comment-meta'>" . htmlspecialchars($author);
-    if ($created !== false) {
-      echo " &middot; " . date("j M Y", $created);
-    }
-    echo "</p><p>" . nl2br(htmlspecialchars($text)) . "</p></div>";
+    print_comment($comment);
   }
   echo "</div>";
+}
+
+function print_comment_pagination($page, $params, $next, $current)
+{
+  if ($next === null && $current === null) {
+    return;
+  }
+  echo "<h2 class='next-page'>";
+  $links = [];
+  if ($current !== null) {
+    $links[] = "<a href='/" . ltrim($page, "/") . "?" . htmlspecialchars(http_build_query($params)) . "'>First comments</a>";
+  }
+  if ($next !== null) {
+    $params["bookmark"] = $next;
+    $links[] = "<a href='/" . ltrim($page, "/") . "?" . htmlspecialchars(http_build_query($params)) . "'>Next comments</a>";
+  }
+  echo implode(" ", $links) . "</h2>";
 }
 
 function pins_have_video($pins)

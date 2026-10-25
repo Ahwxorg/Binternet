@@ -2,6 +2,14 @@
 
 require "misc/tools.php";
 
+$bookmark = $_GET["bookmark"] ?? null;
+if ($bookmark !== null && (!is_string($bookmark) || strlen($bookmark) > 4096)) {
+    not_found();
+}
+if ($bookmark === "") {
+    $bookmark = null;
+}
+
 // Search results only expose an opaque pin id, so their comments button uses
 // the aggregated id and lands on this comments-only view.
 $aggregated = $_GET["agg"] ?? null;
@@ -9,7 +17,8 @@ if ($aggregated !== null) {
     if (!is_string($aggregated) || !preg_match('/^\d+$/D', $aggregated)) {
         not_found();
     }
-    $comments = pin_comments($aggregated);
+    $comment_page = pin_comments($aggregated, $bookmark);
+    $comments = $comment_page["comments"];
     require "misc/header.php";
     ?>
     <title>Comments - Binternet</title>
@@ -29,7 +38,9 @@ if ($aggregated !== null) {
                 <p>No comments yet.</p>
             <?php } else {
                 print_comments($comments);
-            } ?>
+            }
+            print_comment_pagination("pin.php", ["agg" => $aggregated], $comment_page["bookmark"], $bookmark);
+            ?>
         </div>
     <?php include "misc/footer.php"; ?>
     </body>
@@ -101,7 +112,8 @@ if ($author_name === "") {
 }
 
 // Comments hang off Pinterest's aggregated pin id, not the pin id itself.
-$comments = pin_comments((string) ($pin->aggregated_pin_data->id ?? ""));
+$comment_page = pin_comments((string) ($pin->aggregated_pin_data->id ?? ""), $bookmark);
+$comments = $comment_page["comments"];
 
 require "misc/header.php";
 ?>
@@ -139,7 +151,10 @@ require "misc/header.php";
         <?php if ($author_user !== "") { ?>
             <p>media by: <a class="uploader" href="/user.php?user=<?php echo rawurlencode($author_user); ?>"><?php echo htmlspecialchars($author_name); ?></a></p>
         <?php } ?>
-        <?php print_comments($comments); ?>
+        <?php
+        print_comments($comments);
+        print_comment_pagination("pin.php", ["id" => $id], $comment_page["bookmark"], $bookmark);
+        ?>
     </div>
 <?php include "misc/footer.php"; ?>
 </body>

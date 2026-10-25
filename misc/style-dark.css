@@ -444,6 +444,17 @@ button:hover {
   font-weight: 600;
 }
 
+.comment-replies {
+  margin: 0.35rem 0 0 1.25rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--main-second);
+}
+
+.comment-replies .comment {
+  padding: 0.35rem 0;
+  border-top: 0;
+}
+
 /* search css end */
 
 /* donate css start */
