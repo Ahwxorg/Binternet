@@ -109,7 +109,7 @@ $search = function ($query, $bookmark) use ($prepare_search_curl_obj) {
             echo "<div class='img-result'>";
             echo "<a href='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
             echo "<img loading='lazy' src='/image_proxy.php?url=" . htmlspecialchars($url) . "'>";
-	    echo "<p>image by: <a class='uploader' href='https://pinterest.com/" . $authorUser . "'>" . $authorName . "</a></p>";
+	    echo "<p>image by: <a class='uploader' href='https://pinterest.com/" . htmlspecialchars(rawurlencode($authorUser ?? '')) . "'>" . htmlspecialchars($authorName ?? '') . "</a></p>";
 	    echo "</a>";
             echo "</div>";
         }
