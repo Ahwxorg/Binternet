@@ -1,8 +1,8 @@
 <?php require "misc/header.php"; ?>
 <title>
 <?php
-$query = htmlspecialchars(trim($_REQUEST["q"] ?? ''));
-echo $query ?: 'Search' . ' - Binternet';
+$query = trim($_REQUEST["q"] ?? '');
+echo htmlspecialchars($query) ?: 'Search' . ' - Binternet';
 ?> - Binternet</title>
 </head>
 <body>
@@ -51,7 +51,7 @@ $prepare_search_curl_obj = function ($query, $bookmark) use ($url, $header_funct
             "query" => $query,
 			"scope" => "pins",
 			"filter_genai" => true,
-			"source_url" => "/search/pins/?q=$query&rs=typed",
+			"source_url" => "/search/pins/?q=" . urlencode($query) . "&rs=typed",
 			"page_size" => 50,
         ],
     ];
